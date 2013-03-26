@@ -1,0 +1,13 @@
+# Allow directory listings and CGI execution
+Options +Indexes +ExecCGI
+
+# Change handler for the two composite*.xml files to cgi
+# Obviously this requires apache to run cgis (mod cgi)
+# Make sure both files are executable by the webserver process
+<FilesMatch "compositeArtifacts.xml">
+    SetHandler cgi-script
+</FilesMatch>
+<FilesMatch "compositeContent.xml">
+    SetHandler cgi-script
+</FilesMatch>
+
