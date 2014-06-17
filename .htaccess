@@ -1,5 +1,5 @@
 # Allow directory listings and CGI execution
-Options +Indexes +ExecCGI
+Options +Indexes +ExecCGI +FollowSymLinks
 
 # Change handler for the two composite*.xml files to cgi
 # Obviously this requires apache to run cgis (mod cgi)
