@@ -28,7 +28,7 @@ NOW=`date +%s`
 # A p2 repository qualifies, if an artifacts.xml|jar file can be found (expecting either artifacts.xml or zipped artifacts.jar)
 # This is obviously the performance bottleneck and thus uses min/max depth as a restriction
 cd $DIRNAME
-REPOS=`find . -mindepth 5 -type f -name artifacts.xml -o -name artifacts.jar -path '*/builds/*/archive/*' -printf "%h\n"`
+REPOS=`find . -mindepth 5 -type f \( -name artifacts.xml -or -name artifacts.jar \) -path '*/builds/*/archive/*' -printf "%h\n"`
 
 # (remember quotes matter!)
 AMOUNT=`echo "$REPOS" | wc -l`
